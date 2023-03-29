@@ -2,7 +2,7 @@
 variable "dns_provider" {
   type        = string
   description = "Name of the DNS module to use (cloudflare, linode)"
-  default     = "cloudflare"
+  default     = "aws"
 }
 
 variable "dns_options" {
@@ -35,14 +35,19 @@ variable "facility" {
   default     = "da11"
 }
 
+variable "plan_bastion" {
+  description = "Plan for Bastion"
+  default     = "c3.small.x86"
+}
+
 variable "plan_controlplane" {
   description = "Plan for Control Plane Nodes"
-  default     = "c3.medium.x86"
+  default     = "m3.small.x86"
 }
 
 variable "plan_compute" {
   description = "Plan for Compute Nodes"
-  default     = "c2.medium.x86"
+  default     = "c3.medium.x86"
 }
 
 variable "count_bootstrap" {
@@ -56,7 +61,7 @@ variable "count_controlplane" {
 }
 
 variable "count_compute" {
-  default     = "2"
+  default     = "3"
   description = "Number of Compute Nodes"
 }
 
@@ -66,7 +71,7 @@ variable "cluster_name" {
 }
 
 variable "ocp_version" {
-  default     = "4.9"
+  default     = "4.12"
   description = "OpenShift minor release version"
 }
 

@@ -1,9 +1,5 @@
 terraform {
   required_providers {
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "3.6.0" # pinned to prevent required credentials in newer versions
-    }
     external = {
       source = "hashicorp/external"
     }
